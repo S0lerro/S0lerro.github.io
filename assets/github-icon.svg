@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">GitHub</title>
+  <desc id="desc">GitHub mark for project card.</desc>
+  <rect width="900" height="520" fill="#0d1117"/>
+  <rect x="40" y="40" width="820" height="440" rx="28" fill="#161b22"/>
+  <path fill="#ffffff" fill-rule="evenodd" d="M450 111c-86 0-156 70-156 156 0 69 45 128 107 148 8 1 11-3 11-8v-30c-44 10-53-19-53-19-7-18-17-22-17-22-14-10 1-10 1-10 16 1 24 16 24 16 14 24 37 17 46 13 1-10 5-17 10-21-35-4-72-18-72-77 0-17 6-31 16-42-2-4-7-20 2-41 0 0 13-4 43 16 12-3 25-5 38-5s26 2 38 5c30-20 43-16 43-16 9 21 4 37 2 41 10 11 16 25 16 42 0 59-37 73-72 77 6 5 11 15 11 31v46c0 5 3 9 11 8 62-20 107-79 107-148 0-86-70-156-156-156Z" clip-rule="evenodd"/>
+  <text x="450" y="454" fill="#c9d1d9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700">GitHub repository</text>
+</svg>

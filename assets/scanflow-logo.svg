@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">ScanFlow</title>
+  <desc id="desc">Vector ScanFlow logo on a clean light background.</desc>
+  <rect width="900" height="520" fill="#ffffff"/>
+  <rect x="40" y="40" width="820" height="440" rx="28" fill="#f6fbff"/>
+  <g transform="translate(184 170)">
+    <path d="M118 0h98l-83 79 83 80h-98L35 79z" fill="#13a7e8"/>
+    <path d="M214 0h98l-83 79 83 80h-98l-83-80z" fill="#2563eb"/>
+    <path d="M74 18h82l-64 61 64 62H74L10 79z" fill="#45d0d9"/>
+  </g>
+  <text x="428" y="284" fill="#07152d" font-family="Inter, Arial, sans-serif" font-size="88" font-weight="800">ScanFlow</text>
+</svg>
