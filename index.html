@@ -11,54 +11,78 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <a class="logo" href="#top" aria-label="На главную">СК</a>
-      <nav class="site-nav" aria-label="Основная навигация">
-        <a href="#services">Задачи</a>
-        <a href="#approach">Подход</a>
-        <a href="#mobius">Скорость</a>
-        <a href="#cases">Кейсы</a>
-        <a href="#pricing">Цены</a>
-        <a href="#reviews">Отзывы</a>
-        <a href="#faq">Вопросы</a>
-        <a href="#contacts">Контакты</a>
-      </nav>
-      <a class="header-action" href="#contacts">Обсудить задачу</a>
+      <div class="wrap header-inner">
+        <a class="logo" href="#top" aria-label="На главную">
+          <span class="logo-light">Савелий</span>&nbsp;<span class="logo-bold">Ковин</span>
+        </a>
+        <nav class="site-nav" aria-label="Основная навигация">
+          <a href="#about">Обо мне</a>
+          <a href="#services">Задачи</a>
+          <a href="#cases">Проекты</a>
+          <a href="#pricing">Цены</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#faq">Вопросы</a>
+        </nav>
+        <a class="button accent header-action" href="#contacts">Обсудить задачу</a>
+      </div>
     </header>
 
     <main id="top">
-      <section class="hero section">
-        <div class="hero-content reveal">
-          <p class="eyebrow">Савелий Ковин · AI-разработчик</p>
+      <section class="hero">
+        <div class="wrap hero-inner reveal">
           <h1>Приложения, боты и AI-автоматизация для бизнеса — от задачи до запуска</h1>
           <p class="hero-lead">
             Разбираюсь в задаче, собираю первую рабочую версию и довожу её до реальных
             пользователей. Готовое ТЗ не нужно — достаточно описать проблему своими словами.
           </p>
-          <div class="hero-actions">
+          <div class="actions">
             <a class="button primary" href="#contacts">Обсудить задачу</a>
-            <a class="button secondary" href="#cases">Смотреть кейсы</a>
+            <a class="button ghost-light" href="#cases">Смотреть проекты</a>
           </div>
-          <p class="hero-note">
-            Опишите задачу в двух предложениях — отвечу, что реально сделать в первой версии,
-            сколько это займёт и сколько будет стоить.
-          </p>
-          <div class="stats-grid" aria-label="Ключевая статистика">
-            <div class="stat-item">
-              <strong>3</strong>
-              <span>приложения в RuStore и App Store</span>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="wrap">
+          <div class="about-inner">
+            <div class="about-photo reveal">
+              <img src="assets/saveliy-portrait.png" alt="Савелий Ковин" />
             </div>
-            <div class="stat-item">
+            <div class="about-main reveal">
+              <p class="eyebrow">Здравствуйте</p>
+              <h2>
+                Я Савелий. Делаю приложения, ботов и AI-автоматизацию для бизнеса и довожу их
+                до реальных пользователей.
+              </h2>
+              <p>
+                Я не студия и не агентство. Со мной вы общаетесь напрямую с тем, кто проектирует
+                решение и пишет код: нет менеджеров, пересказов и потерь между отделами.
+              </p>
+              <p>
+                Мои приложения опубликованы в RuStore и App Store. Среди коммерческих проектов —
+                система бронирования с онлайн-оплатой, AI-боты с передачей заявок в CRM и внутренние
+                AI-инструменты для аналитических задач.
+              </p>
+              <a class="button primary" href="#cases">Смотреть проекты</a>
+            </div>
+          </div>
+          <div class="stats reveal">
+            <div class="stat">
+              <strong>3</strong>
+              <span>приложения опубликованы в RuStore и App Store</span>
+            </div>
+            <div class="stat">
               <strong>2–4 недели</strong>
               <span>до первой рабочей версии</span>
             </div>
-            <div class="stat-item is-wide">
+            <div class="stat">
               <strong>YClients · YooKassa · AmoCRM</strong>
               <span>интеграции с сервисами вашего бизнеса</span>
             </div>
@@ -66,319 +90,305 @@
         </div>
       </section>
 
-      <section class="section" id="services">
-        <div class="section-heading reveal">
-          <p class="eyebrow">С чем приходят</p>
-          <h2>Решаю задачи бизнеса, а не «делаю сайты и ботов».</h2>
-        </div>
-        <div class="services-grid">
-          <article class="service-card reveal">
-            <span class="service-icon">01</span>
-            <h3>Заявки теряются в переписке</h3>
-            <p>Бот принимает обращения, консультирует и передаёт готовую заявку в CRM.</p>
-            <p class="service-proof">Пример: VR-арена «Другие миры» — AI-бот с интеграцией AmoCRM.</p>
-          </article>
-          <article class="service-card reveal">
-            <span class="service-icon">02</span>
-            <h3>Запись клиентов ведётся вручную</h3>
-            <p>Автоматическая запись с проверкой свободного времени и онлайн-оплатой.</p>
-            <p class="service-proof">Пример: база отдыха — бот с YClients и YooKassa.</p>
-          </article>
-          <article class="service-card reveal">
-            <span class="service-icon">03</span>
-            <h3>Нужно приложение для клиентов</h3>
-            <p>Мобильное приложение: каталог, личный кабинет, заявки, уведомления, оплата.</p>
-            <p class="service-proof">Пример: FinSight, опубликован в RuStore.</p>
-          </article>
-          <article class="service-card reveal">
-            <span class="service-icon">04</span>
-            <h3>Есть система, нужно связать её с другой</h3>
-            <p>Интеграции через API: перенос данных, автопубликация, синхронизация между сервисами.</p>
-            <p class="service-proof">Пример: автоматическая публикация из одной площадки в другую.</p>
-          </article>
-          <article class="service-card is-wide reveal">
-            <span class="service-icon">05</span>
-            <h3>Есть идея, но непонятно, с чего начать</h3>
-            <p>Разбираем задачу, определяем минимальную версию, собираем и проверяем на реальных пользователях. Готовое ТЗ не нужно — достаточно описать проблему своими словами.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section band" id="approach">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Как со мной работать</p>
-          <h2>Работаю один и отвечаю за результат лично.</h2>
-        </div>
-        <div class="about-layout">
-          <article class="about-profile reveal">
-            <h3>Савелий Ковин</h3>
-            <p>
-              Я не студия и не агентство. Со мной вы общаетесь напрямую с тем, кто проектирует
-              решение и пишет код: нет менеджеров, пересказов и потерь между отделами.
-            </p>
-            <p>
-              Мои приложения опубликованы в RuStore и App Store. Среди коммерческих проектов —
-              система бронирования с онлайн-оплатой, AI-боты с передачей заявок в CRM и внутренние
-              AI-инструменты для аналитических задач.
-            </p>
-          </article>
-
-          <div class="about-details">
-            <article class="about-card reveal">
-              <h3>Что уже запущено</h3>
-              <ul class="about-list">
-                <li><strong>FinSight</strong> — приложение для учёта личных финансов с AI-помощником. Опубликовано в RuStore.</li>
-                <li><strong>ScanFlow</strong> — платёжное Android-приложение. Опубликовано в RuStore.</li>
-                <li><strong>Recado</strong> — мессенджер для международного проекта. Публиковался в App Store.</li>
-                <li><strong>AI-бот бронирования</strong> с интеграцией YClients, YooKassa и базы данных — работает у клиента.</li>
-                <li><strong>AI-бот-консультант</strong> с передачей заявок в AmoCRM — работает у клиента.</li>
-              </ul>
-            </article>
-
-            <article class="about-card reveal">
-              <h3>Технологии</h3>
-              <div class="skill-groups">
-                <p><strong>Мобильная разработка:</strong> React Native, Expo, Kotlin, Android</p>
-                <p><strong>Боты и бэкенд:</strong> Python, Aiogram, PostgreSQL, REST API</p>
-                <p><strong>AI:</strong> OpenAI API, DeepSeek API</p>
-                <p><strong>Интеграции:</strong> YClients, YooKassa, AmoCRM, Firebase</p>
+      <section class="section dark" id="services">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div>
+              <p class="eyebrow light">С чем ко мне приходят</p>
+              <h2>Решаю задачи бизнеса, а не «делаю сайты и ботов»</h2>
+            </div>
+            <a class="button accent" href="#contacts">Обсудить задачу</a>
+          </div>
+          <div class="service-list reveal">
+            <article class="service-row">
+              <span class="service-num">01</span>
+              <div>
+                <h3>Заявки теряются в переписке</h3>
+                <p>Бот принимает обращения, консультирует и передаёт готовую заявку в CRM.</p>
+                <p class="service-proof">Пример: VR-арена «Другие миры» — AI-бот с интеграцией AmoCRM.</p>
               </div>
             </article>
-
+            <article class="service-row">
+              <span class="service-num">02</span>
+              <div>
+                <h3>Запись клиентов ведётся вручную</h3>
+                <p>Автоматическая запись с проверкой свободного времени и онлайн-оплатой.</p>
+                <p class="service-proof">Пример: база отдыха — бот с YClients и YooKassa.</p>
+              </div>
+            </article>
+            <article class="service-row">
+              <span class="service-num">03</span>
+              <div>
+                <h3>Нужно приложение для клиентов</h3>
+                <p>Мобильное приложение: каталог, личный кабинет, заявки, уведомления, оплата.</p>
+                <p class="service-proof">Пример: FinSight, опубликован в RuStore.</p>
+              </div>
+            </article>
+            <article class="service-row">
+              <span class="service-num">04</span>
+              <div>
+                <h3>Есть система, нужно связать её с другой</h3>
+                <p>Интеграции через API: перенос данных, автопубликация, синхронизация между сервисами.</p>
+                <p class="service-proof">Пример: автоматическая публикация из одной площадки в другую.</p>
+              </div>
+            </article>
+            <article class="service-row">
+              <span class="service-num">05</span>
+              <div>
+                <h3>Есть идея, но непонятно, с чего начать</h3>
+                <p>
+                  Разбираем задачу, определяем минимальную версию, собираем и проверяем на реальных
+                  пользователях. Готовое ТЗ не нужно — достаточно описать проблему своими словами.
+                </p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
-
 
       <section class="section" id="mobius">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Почему это быстрее</p>
-          <h2>Скорость объясняется инструментом, а не обещанием.</h2>
-        </div>
-        <div class="mobius-layout">
-          <article class="mobius-intro reveal">
+        <div class="wrap mobius-inner">
+          <div class="mobius-text reveal">
+            <p class="eyebrow">Почему это быстрее</p>
+            <h2>Скорость объясняется инструментом, а не обещанием</h2>
             <p>
-              Я построил собственный инструмент — <strong>MobiusAI</strong>, который генерирует
-              мобильные приложения на React Native по описанию задачи. Это не «приложение одной
-              кнопкой»: AI берёт на себя объём кода, а архитектуру, интеграции с вашими сервисами,
-              проверку сценариев и доведение до публикации делаю я.
+              Я построил собственную платформу — <strong>MobiusAI</strong>. Приложение описывается
+              текстом, AI проектирует структуру, экраны и компоненты и собирает мобильное приложение
+              на React Native + Expo. Архитектура платформы, AI-пайплайн и сама разработка — моя
+              работа. Это не «приложение одной кнопкой»: AI берёт на себя объём кода, а архитектуру
+              вашего проекта, интеграции с вашими сервисами, проверку сценариев и доведение до
+              публикации делаю я.
             </p>
             <p class="mobius-accent">Ответственность за результат при этом на мне, а не на инструменте.</p>
-          </article>
-          <div class="mobius-benefits">
-            <article class="mobius-card reveal">
+          </div>
+          <div class="mobius-list reveal">
+            <div class="mobius-item">
               <h3>Первая рабочая версия за 2–4 недели</h3>
               <p>А не за квартал: путь от задачи до запуска короче, чем в классической разработке.</p>
-            </article>
-            <article class="mobius-card reveal">
+            </div>
+            <div class="mobius-item">
               <h3>Бюджет без стоимости команды</h3>
               <p>Вы не платите за менеджеров, аналитиков и координацию между отделами.</p>
-            </article>
-            <article class="mobius-card reveal">
+            </div>
+            <div class="mobius-item">
               <h3>Быстрые правки</h3>
               <p>Изменения после демонстрации вносятся за дни, а не за спринты.</p>
-            </article>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section band" id="cases">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Кейсы</p>
-          <h2>Работающие продукты: боты в бизнес-процессах и приложения в магазинах.</h2>
+      <section class="section dark" id="cases">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div>
+              <p class="eyebrow light">Проекты</p>
+              <h2>Работающие продукты: боты в бизнес-процессах и приложения в магазинах</h2>
+            </div>
+          </div>
+          <div class="projects" id="casesGrid" aria-live="polite"></div>
+          <p class="eyebrow light secondary-title reveal">Другие проекты</p>
+          <div class="projects-secondary" id="secondaryCasesGrid"></div>
         </div>
-        <div class="cases-grid" id="casesGrid" aria-live="polite"></div>
-        <div class="section-subheading reveal">
-          <h3>Другие проекты</h3>
-        </div>
-        <div class="cases-grid is-secondary" id="secondaryCasesGrid"></div>
       </section>
 
       <section class="section" id="pricing">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Цены</p>
-          <h2>Ориентиры по бюджету — чтобы не тратить ваше время на созвон ради вилки.</h2>
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div>
+              <p class="eyebrow">Цены</p>
+              <h2>Ориентиры по бюджету — чтобы не тратить ваше время на созвон ради вилки</h2>
+            </div>
+          </div>
+          <div class="pricing">
+            <article class="price reveal">
+              <h3>Автоматизация или бот с интеграциями</h3>
+              <strong>от 50 000 ₽</strong>
+              <p>AI-бот, приём заявок, запись, оплата, передача данных в CRM или таблицы.</p>
+            </article>
+            <article class="price reveal">
+              <h3>MVP мобильного приложения</h3>
+              <strong>от 90 000 ₽</strong>
+              <p>Первая версия приложения с публикацией в RuStore или App Store.</p>
+            </article>
+            <article class="price reveal">
+              <h3>Сложные системы</h3>
+              <strong>от 150 000 ₽</strong>
+              <p>Несколько интеграций, нестандартная логика, работа с внешними системами.</p>
+            </article>
+          </div>
+          <p class="pricing-note reveal">Точную стоимость называю после разбора задачи, обычно в течение суток.</p>
         </div>
-        <div class="pricing-grid">
-          <article class="pricing-card reveal">
-            <h3>Автоматизация или бот с интеграциями</h3>
-            <strong>от 50 000 ₽</strong>
-            <p>AI-бот, приём заявок, запись, оплата, передача данных в CRM или таблицы.</p>
-          </article>
-          <article class="pricing-card reveal">
-            <h3>MVP мобильного приложения</h3>
-            <strong>от 90 000 ₽</strong>
-            <p>Первая версия приложения с публикацией в RuStore или App Store.</p>
-          </article>
-          <article class="pricing-card reveal">
-            <h3>Сложные системы</h3>
-            <strong>от 150 000 ₽</strong>
-            <p>Несколько интеграций, нестандартная логика, работа с внешними системами. Обсуждается индивидуально.</p>
-          </article>
-        </div>
-        <p class="pricing-note reveal">
-          Точную стоимость называю после разбора задачи, обычно в течение суток.
-        </p>
       </section>
 
-      <section class="section band" id="reviews">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Отзывы</p>
-          <h2>Что говорят клиенты, для которых я уже делал ботов.</h2>
+      <section class="section dark" id="reviews">
+        <div class="wrap">
+          <p class="eyebrow light centered reveal">Отзывы</p>
+          <h2 class="centered reveal">Что говорят клиенты, для которых я уже делал ботов</h2>
+          <div class="reviews" id="reviewsGrid"></div>
         </div>
-        <div class="reviews-grid" id="reviewsGrid"></div>
       </section>
 
       <section class="section" id="process">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Как я работаю</p>
-          <h2>Без лишней сложности: сначала задача, потом рабочая первая версия.</h2>
-        </div>
-        <div class="process-list">
-          <article class="process-step reveal">
-            <span>1</span>
+        <div class="wrap">
+          <div class="section-head reveal">
             <div>
-              <h3>Разбираем задачу</h3>
-              <p>Созвон или переписка, 20–30 минут.</p>
-              <p class="process-split">
-                <em>От вас:</em> рассказать, что должно происходить.
-                <em>От меня:</em> список того, что войдёт в первую версию, срок и цена.
-              </p>
+              <p class="eyebrow">Как я работаю</p>
+              <h2>Сначала задача, потом рабочая первая версия</h2>
             </div>
-          </article>
-          <article class="process-step reveal">
-            <span>2</span>
-            <div>
-              <h3>Определяем первую версию</h3>
-              <p>Фиксируем объём работ.</p>
-              <p class="process-split">
-                <em>От вас:</em> подтвердить. <em>От меня:</em> зафиксированные состав, срок и стоимость.
+          </div>
+          <div class="steps">
+            <article class="step reveal">
+              <span class="step-num">01</span>
+              <div class="step-body">
+                <h3>Разбираем задачу</h3>
+                <p>Созвон или переписка, 20–30 минут.</p>
+              </div>
+              <p class="step-split">
+                <em>От вас:</em> рассказать, что должно происходить.<br />
+                <em>От меня:</em> состав первой версии, срок и цена.
               </p>
-            </div>
-          </article>
-          <article class="process-step reveal">
-            <span>3</span>
-            <div>
-              <h3>Собираю продукт</h3>
-              <p>Разработка приложения, бота или автоматизации.</p>
-              <p class="process-split">
-                <em>От вас:</em> ничего, кроме ответов на редкие вопросы.
+            </article>
+            <article class="step reveal">
+              <span class="step-num">02</span>
+              <div class="step-body">
+                <h3>Определяем первую версию</h3>
+                <p>Фиксируем объём работ.</p>
+              </div>
+              <p class="step-split">
+                <em>От вас:</em> подтвердить.<br />
+                <em>От меня:</em> зафиксированные состав, срок и стоимость.
+              </p>
+            </article>
+            <article class="step reveal">
+              <span class="step-num">03</span>
+              <div class="step-body">
+                <h3>Собираю продукт</h3>
+                <p>Разработка приложения, бота или автоматизации.</p>
+              </div>
+              <p class="step-split">
+                <em>От вас:</em> ничего, кроме ответов на редкие вопросы.<br />
                 <em>От меня:</em> промежуточная демонстрация.
               </p>
-            </div>
-          </article>
-          <article class="process-step reveal">
-            <span>4</span>
-            <div>
-              <h3>Тестируем</h3>
-              <p>Проверка реальных сценариев.</p>
-              <p class="process-split">
-                <em>От вас:</em> посмотреть и сказать, что не так. <em>От меня:</em> исправления.
+            </article>
+            <article class="step reveal">
+              <span class="step-num">04</span>
+              <div class="step-body">
+                <h3>Тестируем</h3>
+                <p>Проверка реальных сценариев.</p>
+              </div>
+              <p class="step-split">
+                <em>От вас:</em> посмотреть и сказать, что не так.<br />
+                <em>От меня:</em> исправления.
               </p>
-            </div>
-          </article>
-          <article class="process-step reveal">
-            <span>5</span>
-            <div>
-              <h3>Запускаем</h3>
-              <p>Выводим продукт к пользователям.</p>
-              <p class="process-split">
-                <em>От вас:</em> ничего. <em>От меня:</em> рабочий продукт, все доступы и
-                две недели бесплатных исправлений.
+            </article>
+            <article class="step reveal">
+              <span class="step-num">05</span>
+              <div class="step-body">
+                <h3>Запускаем</h3>
+                <p>Выводим продукт к пользователям.</p>
+              </div>
+              <p class="step-split">
+                <em>От вас:</em> ничего.<br />
+                <em>От меня:</em> рабочий продукт, все доступы и две недели бесплатных исправлений.
               </p>
-            </div>
-          </article>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="section band" id="faq">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Частые вопросы</p>
-          <h2>То, о чём спрашивают до начала работы.</h2>
-        </div>
-        <div class="faq-list">
-          <details class="faq-item reveal">
-            <summary>У меня нет технического задания. Это проблема?</summary>
-            <p>
-              Нет, и это обычная ситуация. Опишите задачу своими словами: что должно происходить и
-              какой результат вам нужен. Дальше я задам уточняющие вопросы и предложу, что имеет
-              смысл делать в первой версии, а что отложить. ТЗ — это моя работа, а не ваша.
-            </p>
-          </details>
-          <details class="faq-item reveal">
-            <summary>У нас уже есть система. Сможете подключиться?</summary>
-            <p>
-              Да. Работаю с внешними API, CRM и сервисами: YClients, YooKassa, AmoCRM, платёжные и
-              учётные системы. Если у вашей системы есть API или техподдержка, я разберусь в ней сам
-              и свяжусь с ними при необходимости.
-            </p>
-          </details>
-          <details class="faq-item reveal">
-            <summary>Сколько это стоит?</summary>
-            <p>
-              Зависит от объёма. Ориентиры: автоматизация или бот с интеграциями — от 50 000 ₽;
-              MVP мобильного приложения — от 90 000 ₽. Точную цену называю после разбора задачи,
-              обычно в течение суток.
-            </p>
-          </details>
-          <details class="faq-item reveal">
-            <summary>Сколько времени займёт?</summary>
-            <p>
-              Первая рабочая версия — 2–4 недели для типовых задач. Если проект сложнее, называю срок
-              после разбора и не занижаю его, чтобы получить заказ.
-            </p>
-          </details>
-          <details class="faq-item reveal">
-            <summary>Вам 18 лет — это не риск для моего проекта?</summary>
-            <p>
-              Резонный вопрос. Отвечу фактами: мои приложения опубликованы в RuStore и App Store и
-              прошли модерацию магазинов; коммерческие проекты работают у клиентов с реальной оплатой
-              и интеграцией в CRM. Работу разбиваю на этапы с оплатой по факту, первая демо-версия —
-              до основного платежа. Так вы принимаете решение о продолжении, уже увидев результат, а
-              не поверив на слово.
-            </p>
-          </details>
-          <details class="faq-item reveal">
-            <summary>Как построена оплата?</summary>
-            <p>
-              По этапам, а не одной суммой вперёд. Предоплата 50% на старте, остаток — после того,
-              как вы приняли работу. Первую рабочую версию я показываю до финального платежа: решение
-              о продолжении вы принимаете, уже посмотрев на результат, а не поверив на слово.
-            </p>
-          </details>
-          <details class="faq-item reveal">
-            <summary>Что если после запуска что-то сломается?</summary>
-            <p>
-              Две недели после сдачи исправляю ошибки бесплатно — всё, что работает не так, как мы
-              договорились. Это не отдельная услуга и не оплачивается дополнительно. Дальше возможно
-              сопровождение и доработки по договорённости: так я продолжаю работать с клиентами,
-              которым делал ботов.
-            </p>
-          </details>
-          <details class="faq-item reveal">
-            <summary>Что я получаю в итоге?</summary>
-            <p>
-              Работающий продукт и полный доступ к нему: исходный код, доступы к серверу, к аккаунтам
-              сервисов и интеграций, опубликованное приложение в вашем аккаунте разработчика, если это
-              мобильный проект. Плюс короткая инструкция, как всё устроено и что делать при типовых
-              ситуациях. Ничего не остаётся привязанным лично ко мне.
-            </p>
-          </details>
+      <section class="section soft" id="faq">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div>
+              <p class="eyebrow">Частые вопросы</p>
+              <h2>То, о чём спрашивают до начала работы</h2>
+            </div>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item reveal">
+              <summary>У меня нет технического задания. Это проблема?</summary>
+              <p>
+                Нет, и это обычная ситуация. Опишите задачу своими словами: что должно происходить и
+                какой результат вам нужен. Дальше я задам уточняющие вопросы и предложу, что имеет
+                смысл делать в первой версии, а что отложить. ТЗ — это моя работа, а не ваша.
+              </p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>У нас уже есть система. Сможете подключиться?</summary>
+              <p>
+                Да. Работаю с внешними API, CRM и сервисами: YClients, YooKassa, AmoCRM, платёжные и
+                учётные системы. Если у вашей системы есть API или техподдержка, я разберусь в ней сам
+                и свяжусь с ними при необходимости.
+              </p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>Сколько это стоит?</summary>
+              <p>
+                Зависит от объёма. Ориентиры: автоматизация или бот с интеграциями — от 50 000 ₽;
+                MVP мобильного приложения — от 90 000 ₽. Точную цену называю после разбора задачи,
+                обычно в течение суток.
+              </p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>Сколько времени займёт?</summary>
+              <p>
+                Первая рабочая версия — 2–4 недели для типовых задач. Если проект сложнее, называю срок
+                после разбора и не занижаю его, чтобы получить заказ.
+              </p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>Как построена оплата?</summary>
+              <p>
+                По этапам, а не одной суммой вперёд. Предоплата 50% на старте, остаток — после того,
+                как вы приняли работу. Первую рабочую версию я показываю до финального платежа: решение
+                о продолжении вы принимаете, уже посмотрев на результат, а не поверив на слово.
+              </p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>Что если после запуска что-то сломается?</summary>
+              <p>
+                Две недели после сдачи исправляю ошибки бесплатно — всё, что работает не так, как мы
+                договорились. Это не отдельная услуга и не оплачивается дополнительно. Дальше возможно
+                сопровождение и доработки по договорённости: так я продолжаю работать с клиентами,
+                которым делал ботов.
+              </p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>Что я получаю в итоге?</summary>
+              <p>
+                Работающий продукт и полный доступ к нему: исходный код, доступы к серверу, к аккаунтам
+                сервисов и интеграций, опубликованное приложение в вашем аккаунте разработчика, если это
+                мобильный проект. Плюс короткая инструкция, как всё устроено и что делать при типовых
+                ситуациях. Ничего не остаётся привязанным лично ко мне.
+              </p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>Вам 18 лет — это не риск для моего проекта?</summary>
+              <p>
+                Резонный вопрос. Отвечу фактами: мои приложения опубликованы в RuStore и App Store и
+                прошли модерацию магазинов; коммерческие проекты работают у клиентов с реальной оплатой
+                и интеграцией в CRM. Работу разбиваю на этапы с оплатой по факту, первая демо-версия —
+                до основного платежа. Так вы принимаете решение о продолжении, уже увидев результат, а
+                не поверив на слово.
+              </p>
+            </details>
+          </div>
         </div>
       </section>
 
-      <section class="section contact-section" id="contacts">
-        <div class="contact-inner reveal">
-          <p class="eyebrow">Контакты</p>
+      <section class="section dark contact-section" id="contacts">
+        <div class="wrap contact-inner reveal">
+          <p class="eyebrow light">Контакты</p>
           <h2>Есть идея приложения, бота или автоматизации?</h2>
           <p>
             Опишите задачу в двух предложениях — отвечу, что реально сделать в первой версии,
             сколько это займёт и сколько будет стоить.
           </p>
-          <div class="contact-actions">
-            <a class="button primary" href="https://vk.ru/mmcursd">Написать ВКонтакте</a>
-            <a class="button secondary" href="https://t.me/almilvve">Telegram</a>
-            <a class="button secondary" href="mailto:sakovin1008@gmail.com">Email</a>
+          <div class="actions centered-actions">
+            <a class="button accent" href="https://vk.ru/mmcursd">Написать ВКонтакте</a>
+            <a class="button ghost-light" href="https://t.me/almilvve">Telegram</a>
+            <a class="button ghost-light" href="mailto:sakovin1008@gmail.com">Email</a>
           </div>
         </div>
       </section>
@@ -401,14 +411,17 @@
           <span id="linkModalUrl"></span>
         </p>
         <div class="link-modal__actions">
-          <button class="button secondary" type="button" data-close-modal>Отмена</button>
+          <button class="button ghost" type="button" data-close-modal>Отмена</button>
           <button class="button primary" type="button" id="confirmProjectLink">Да, открыть</button>
         </div>
       </div>
     </div>
 
     <footer class="site-footer">
-      <p>© 2026 Савелий Ковин. Приложения, боты и AI-автоматизация для бизнеса.</p>
+      <div class="wrap footer-inner">
+        <span>© 2026 Савелий Ковин</span>
+        <span>Приложения, боты и AI-автоматизация для бизнеса</span>
+      </div>
     </footer>
 
     <script src="script.js"></script>

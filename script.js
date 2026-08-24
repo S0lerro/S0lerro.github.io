@@ -32,6 +32,8 @@ const featuredProjects = [
     ],
     tags: ["VK Bot", "AI", "AmoCRM"],
     coverLabel: "AI-бот · Консультация · AmoCRM",
+    url: "https://vk.ru/anotherworld.serov",
+    linkLabel: "Открыть бота",
   },
   {
     title: "FinSight",
@@ -53,6 +55,39 @@ const featuredProjects = [
 
 const secondaryProjects = [
   {
+    title: "Бот продажи курсов",
+    subtitle: "Оплата, доступ к материалам и админка",
+    status: "Работает у клиента",
+    description:
+      "Клиент покупает курс прямо в боте и сразу получает доступ к материалам. Оплата через YooKassa, отдельная админка для управления курсами и доступами.",
+    tags: ["MAX Bot", "YooKassa", "Админка", "Python"],
+    coverLabel: "Продажа курсов · Оплата · Админка",
+    url: "https://max.ru/id665903340026_bot",
+    linkLabel: "Открыть бота",
+  },
+  {
+    title: "Бот записи на курсы",
+    subtitle: "Google Таблицы и AI-диалог",
+    status: "Работает у клиента",
+    description:
+      "Бот записывает на курсы и отвечает на вопросы в свободной форме через OpenAI API. Заявки складываются в Google Таблицу, где клиент сам правит даты и добавляет новые потоки.",
+    tags: ["VK Bot", "OpenAI API", "Google Sheets"],
+    coverLabel: "Запись на курсы · Google Sheets · AI",
+    url: "https://vk.com/neiroseti_from_kovina",
+    linkLabel: "Открыть бота",
+  },
+  {
+    title: "VK-бот с Google-сервисами",
+    subtitle: "Автоматизация записи и работы с данными",
+    status: "Есть видео-демо",
+    description:
+      "Бот общается с клиентами и закрывает внутренние процессы: данные из диалога сразу уходят в сервисы Google и используются дальше — сотруднику не нужно ничего переносить руками.",
+    tags: ["VK API", "Python", "Google API", "Automation"],
+    coverLabel: "Автоматизация · Google API",
+    url: "https://drive.google.com/file/d/14utzvQFZIFHL5KA6NyB1CMmDH0FzhRyw/view?usp=drive_web",
+    linkLabel: "Смотреть видео-демо",
+  },
+  {
     title: "Recado",
     subtitle: "Мессенджер для международного проекта",
     status: "Публиковался в App Store",
@@ -67,7 +102,8 @@ const secondaryProjects = [
     title: "ScanFlow",
     subtitle: "Платёжное Android-приложение",
     status: "Опубликован в RuStore",
-    description: "Приложение для оплаты рублями в Таиланде и Индонезии. Участвовал в технической реализации мобильного продукта.",
+    description:
+      "Приложение для оплаты рублями в Таиланде и Индонезии. Участвовал в технической реализации мобильного продукта.",
     tags: ["Android", "Kotlin", "REST API"],
     url: "https://www.rustore.ru/catalog/app/com.scanflow.mobile",
     linkLabel: "Открыть в RuStore",
@@ -83,7 +119,7 @@ const secondaryProjects = [
     tags: ["AI", "Analytics", "Automation"],
     url: "https://github.com/S0lerro/AI-Helper-analytics",
     linkLabel: "Открыть репозиторий",
-    image: "assets/ai-analytics-cover.svg",
+    coverLabel: "AI во внутренних процессах",
   },
   {
     title: "One",
@@ -96,6 +132,24 @@ const secondaryProjects = [
     image: "assets/one-icon.jfif",
     imageMode: "contain",
   },
+  {
+    title: "AI-поиск научных цитат",
+    subtitle: "Поиск по публикациям с обработкой через LLM",
+    status: "Исследовательский проект",
+    description:
+      "Бот принимает запрос, ищет релевантные публикации на КиберЛенинке и обрабатывает найденное через LLM, чтобы вернуть подходящую цитату, а не список ссылок.",
+    tags: ["Python", "VK API", "DeepSeek", "Parsing"],
+    coverLabel: "Поиск по научным публикациям · LLM",
+  },
+  {
+    title: "Автоматизация откликов",
+    subtitle: "Парсер заказов и генерация ответов через AI",
+    status: "Personal / Automation",
+    description:
+      "Система отслеживает новые проекты на бирже, разбирает требования заказчика и формирует релевантный отклик через AI. Пример автоматизации рутинной коммуникации от начала до конца.",
+    tags: ["Python", "Parsing", "AI", "Automation"],
+    coverLabel: "Парсинг · AI-отклики",
+  },
 ];
 
 const reviews = [
@@ -103,7 +157,7 @@ const reviews = [
     name: "Кирилл",
     date: "13 дней назад",
     text: "Приятно было работать вместе, все сделал по факту за короткое время. В будущем буду обращаться",
-    service: "Сделаю telegram-бота",
+    service: "Telegram-бот",
     signature: "Клиент / проект",
   },
   {
@@ -111,7 +165,7 @@ const reviews = [
     date: "1 год назад",
     text:
       "Отлично выполнена работа, исполнитель проконсультировал по моим вопросам, сделал бота для записи на обучающий курс. Получаю данные клиентов в Гугл таблице. Там же могу править даты курса и добавлять новые. Очень удобно",
-    service: "",
+    service: "Бот записи на курс",
     signature: "Клиент / бот",
   },
   {
@@ -133,7 +187,7 @@ const confirmProjectLink = document.querySelector("#confirmProjectLink");
 
 let activeProjectUrl = "";
 
-function getCaseAttributes(project) {
+function getLinkAttributes(project) {
   if (!project.url) {
     return "";
   }
@@ -141,46 +195,59 @@ function getCaseAttributes(project) {
   return `role="button" tabindex="0" data-project-url="${project.url}" aria-label="Открыть проект ${project.title}"`;
 }
 
-function getCaseShot(project) {
-  if (project.image) {
-    const imageClass = project.imageMode === "contain" ? "case-shot__image is-contained" : "case-shot__image";
-
-    return `<img class="${imageClass}" src="${project.image}" alt="Скриншот проекта ${project.title}" loading="lazy" />`;
+function getMedia(project, containerClass) {
+  if (!project.image) {
+    return `<span class="project-label">${project.coverLabel || project.subtitle}</span>`;
   }
 
-  return `<span class="case-shot__label">${project.coverLabel || project.subtitle}</span>`;
+  const imageClass = project.imageMode === "contain" ? "is-contained" : "";
+
+  return `<img class="${imageClass}" src="${project.image}" alt="Проект ${project.title}" loading="lazy" />`;
 }
 
-function getCasePoints(project) {
-  if (!project.points) {
-    return "";
-  }
+function renderProject(project) {
+  const points = project.points
+    ? `<ul class="project-points">${project.points.map((point) => `<li>${point}</li>`).join("")}</ul>`
+    : "";
+  const action = project.url
+    ? `<button class="button primary" type="button" data-project-url="${project.url}">${project.linkLabel || "Открыть проект"}</button>`
+    : "";
 
-  return `<ul class="case-points">${project.points.map((point) => `<li>${point}</li>`).join("")}</ul>`;
-}
-
-function renderCaseCard(project) {
   return `
-        <article class="case-card reveal ${project.url ? "is-clickable" : ""}" ${getCaseAttributes(project)}>
-          <div class="case-shot">${getCaseShot(project)}</div>
-          <div class="case-body">
-            <span class="case-status">${project.status}</span>
+        <article class="project reveal">
+          <div class="project-media">${getMedia(project)}</div>
+          <div class="project-caption">
+            <span class="project-status">${project.status}</span>
             <h3>${project.title}</h3>
-            <strong class="case-subtitle">${project.subtitle}</strong>
+            <span class="project-subtitle">${project.subtitle}</span>
             <p>${project.description}</p>
-            ${getCasePoints(project)}
-            <div class="tags">
-              ${project.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
+            ${points}
+            <div class="project-tags">
+              ${project.tags.map((tag) => `<span>${tag}</span>`).join("")}
             </div>
-            ${project.url ? `<span class="case-link">${project.linkLabel || "Открыть проект"} →</span>` : ""}
+            ${action}
+          </div>
+        </article>
+      `;
+}
+
+function renderMiniProject(project) {
+  return `
+        <article class="project-mini reveal ${project.url ? "is-clickable" : ""}" ${getLinkAttributes(project)}>
+          <div class="project-mini__shot">${getMedia(project)}</div>
+          <div>
+            <span class="project-status">${project.status}</span>
+            <h3>${project.title}</h3>
+            <p>${project.description}</p>
+            ${project.url ? `<span class="project-link">${project.linkLabel || "Открыть проект"} →</span>` : ""}
           </div>
         </article>
       `;
 }
 
 function renderProjects() {
-  casesGrid.innerHTML = featuredProjects.map(renderCaseCard).join("");
-  secondaryCasesGrid.innerHTML = secondaryProjects.map(renderCaseCard).join("");
+  casesGrid.innerHTML = featuredProjects.map(renderProject).join("");
+  secondaryCasesGrid.innerHTML = secondaryProjects.map(renderMiniProject).join("");
 }
 
 function openLinkModal(url) {
@@ -200,22 +267,22 @@ function closeLinkModal() {
 function initProjectLinks() {
   [casesGrid, secondaryCasesGrid].forEach((grid) => {
     grid.addEventListener("click", (event) => {
-      const card = event.target.closest("[data-project-url]");
+      const target = event.target.closest("[data-project-url]");
 
-      if (card) {
-        openLinkModal(card.dataset.projectUrl);
+      if (target) {
+        openLinkModal(target.dataset.projectUrl);
       }
     });
 
     grid.addEventListener("keydown", (event) => {
-      const card = event.target.closest("[data-project-url]");
+      const target = event.target.closest("[data-project-url]");
 
-      if (!card || (event.key !== "Enter" && event.key !== " ")) {
+      if (!target || (event.key !== "Enter" && event.key !== " ")) {
         return;
       }
 
       event.preventDefault();
-      openLinkModal(card.dataset.projectUrl);
+      openLinkModal(target.dataset.projectUrl);
     });
   });
 
@@ -249,14 +316,10 @@ function renderReviews() {
   reviewsGrid.innerHTML = reviews
     .map(
       (review) => `
-        <article class="review-card reveal">
-          <div class="review-meta">
-            <h3>${review.name}</h3>
-            <span class="review-date">${review.date}</span>
-          </div>
-          <p class="review-text">${review.text}</p>
-          ${review.service ? `<span class="review-service">${review.service}</span>` : ""}
-          <span class="review-signature">${review.signature}</span>
+        <article class="review reveal">
+          <p class="review-text">«${review.text}»</p>
+          <span class="review-name">${review.name}</span>
+          <span class="review-meta">${review.service || review.signature} · ${review.date}</span>
         </article>
       `,
     )
