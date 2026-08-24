@@ -168,6 +168,8 @@ const secondaryProjects = [
       "Бот принимает запрос, ищет релевантные публикации на КиберЛенинке и обрабатывает найденное через LLM, чтобы вернуть подходящую цитату, а не список ссылок.",
     tags: ["Python", "VK API", "DeepSeek", "Parsing"],
     coverLabel: "Поиск по научным публикациям · LLM",
+    image: "assets/quotes-bot-cover.png",
+    imageMode: "contain",
   },
   {
     title: "Автоматизация откликов",
