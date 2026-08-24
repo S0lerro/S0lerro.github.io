@@ -136,17 +136,6 @@ const secondaryProjects = [
     linkLabel: "Смотреть видео-демо",
   },
   {
-    title: "Recado",
-    subtitle: "Мессенджер для международного проекта",
-    status: "Публиковался в App Store",
-    description: "Мобильный мессенджер на базе Matrix/Element. Участвовал в разработке мобильного продукта.",
-    tags: ["iOS", "Matrix", "App Store"],
-    url: "https://apps.apple.com/app/recado/id6759389840",
-    linkLabel: "Открыть в App Store",
-    image: "assets/recado-icon.webp",
-    imageMode: "contain",
-  },
-  {
     title: "ScanFlow",
     subtitle: "Платёжное Android-приложение",
     status: "Опубликован в RuStore",
