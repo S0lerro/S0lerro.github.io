@@ -159,17 +159,6 @@ const secondaryProjects = [
     coverLabel: "Команда 5 человек · AI-инструмент",
   },
   {
-    title: "One",
-    subtitle: "Мессенджер для внутренней коммуникации сообщества",
-    status: "Mobile / Product",
-    description: "Участвовал в разработке мобильного мессенджера.",
-    tags: ["Messaging", "Mobile", "Product"],
-    url: "http://web.onemessage.ru/",
-    linkLabel: "Открыть проект",
-    image: "assets/one-icon.jfif",
-    imageMode: "contain",
-  },
-  {
     title: "AI-поиск научных цитат",
     subtitle: "Поиск по публикациям с обработкой через LLM",
     status: "Исследовательский проект",
