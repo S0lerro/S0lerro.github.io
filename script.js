@@ -121,6 +121,8 @@ const secondaryProjects = [
       "Бот записывает на курсы и отвечает на вопросы в свободной форме через OpenAI API. Заявки складываются в Google Таблицу, где клиент сам правит даты и добавляет новые потоки.",
     tags: ["VK Bot", "OpenAI API", "Google Sheets"],
     coverLabel: "Запись на курсы · Google Sheets · AI",
+    image: "assets/kovina-avatar.jpg",
+    imageMode: "contain",
     url: "https://vk.com/neiroseti_from_kovina",
     linkLabel: "Открыть бота",
   },
@@ -175,6 +177,8 @@ const secondaryProjects = [
       "Система отслеживает новые проекты на бирже, разбирает требования заказчика и формирует релевантный отклик через AI. Пример автоматизации рутинной коммуникации от начала до конца.",
     tags: ["Python", "Parsing", "AI", "Automation"],
     coverLabel: "Парсинг · AI-отклики",
+    image: "assets/kwork-logo.png",
+    imageMode: "contain",
   },
 ];
 
@@ -221,14 +225,17 @@ function getLinkAttributes(project) {
   return `role="button" tabindex="0" data-project-url="${project.url}" aria-label="Открыть проект ${project.title}"`;
 }
 
-function getMedia(project, containerClass) {
+function getMedia(project) {
+  const label = `<span class="project-label">${project.coverLabel || project.subtitle}</span>`;
+
   if (!project.image) {
-    return `<span class="project-label">${project.coverLabel || project.subtitle}</span>`;
+    return label;
   }
 
   const imageClass = project.imageMode === "contain" ? "is-contained" : "";
 
-  return `<img class="${imageClass}" src="${project.image}" alt="Проект ${project.title}" loading="lazy" />`;
+  // Изображение лежит поверх подписи: если файла нет, оно убирает себя и остаётся текст.
+  return `${label}<img class="${imageClass}" src="${project.image}" alt="Проект ${project.title}" loading="lazy" onerror="this.remove()" />`;
 }
 
 function renderMetrics(project) {
