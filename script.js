@@ -1,61 +1,94 @@
-const projects = [
-  {
-    title: "FinSight",
-    subtitle: "AI-трекер личных финансов",
-    status: "Опубликован в RuStore",
-    description: "Приложение для учёта доходов и расходов с AI-разбором через DeepSeek.",
-    tags: ["React Native", "Expo", "AI", "RuStore"],
-    url: "https://www.rustore.ru/catalog/app/com.finsight.mvp",
-    image: "assets/finsight-screenshot.webp",
-  },
+const featuredProjects = [
   {
     title: "AI-бот бронирования",
-    subtitle: "MAX-бот для базы отдыха",
-    status: "MAX / AI",
+    subtitle: "База отдыха, Выкса",
+    status: "Работает у клиента",
     description:
-      "Бот отвечает на вопросы, помогает с бронированием, учитывает контекст диалога и передаёт заявки администратору.",
-    tags: ["MAX Bot", "AI", "CRM", "Booking"],
+      "Раньше весь путь гостя проходил через переписку с администратором: свободные даты, количество гостей, подбор варианта, оплата. Теперь гость пишет свободным текстом, а бот подбирает вариант, оформляет бронь и принимает оплату.",
+    points: [
+      "AI-диалог вместо кнопочных сценариев",
+      "Интеграция с YClients — актуальная доступность в реальном времени",
+      "Приём оплаты через YooKassa",
+      "База данных броней, изменение и отмена гостем",
+      "Обработка дополнительных услуг",
+    ],
+    tags: ["AI", "YClients", "YooKassa", "PostgreSQL"],
     url: "https://max.ru/id524706834883_bot",
     image: "assets/booking-bot-prichal.jfif",
   },
   {
-    title: "ScanFlow",
-    subtitle: "Платёжное Android-приложение",
-    status: "Android / RuStore",
-    description: "Приложение для сценария оплаты рублями в Таиланде и Индонезии.",
-    tags: ["Android", "Kotlin", "REST API", "RuStore"],
-    url: "https://www.rustore.ru/catalog/app/com.scanflow.mobile",
-    image: "assets/scanflow-logo.svg",
-    imageMode: "contain",
+    title: "AI-бот-консультант",
+    subtitle: "VR-арена «Другие миры», Серов",
+    status: "Работает у клиента",
+    description:
+      "Посетители задавали в сообщениях одни и те же вопросы: какие есть форматы, что входит в пакеты, что подойдёт для компании из шести человек. Сотрудник тратил на это рабочее время, часть обращений терялась.",
+    points: [
+      "AI-консультация в свободном диалоге, а не по кнопкам",
+      "Подбор формата под запрос гостя",
+      "Сбор контактных данных",
+      "Передача заявки в AmoCRM — сразу в воронку продаж",
+      "После запуска клиент продолжил работать со мной над развитием бота",
+    ],
+    tags: ["VK Bot", "AI", "AmoCRM"],
+    coverLabel: "AI-бот · Консультация · AmoCRM",
   },
   {
+    title: "FinSight",
+    subtitle: "Собственное приложение в RuStore",
+    status: "Опубликован в RuStore",
+    description:
+      "Приложение для управления личными финансами с AI-помощником: учёт доходов и расходов, история операций, цели и планирование. Идея, проектирование, разработка, публикация и обновления — полностью моя работа.",
+    points: [
+      "Прошло модерацию магазина и вышло к пользователям",
+      "AI-разбор трат и запросов пользователя",
+      "Публикация в магазине — это не только код: сборки, требования площадки, обновления. Ваше приложение пройдёт тот же путь",
+    ],
+    tags: ["React Native", "Expo", "AI", "RuStore"],
+    url: "https://www.rustore.ru/catalog/app/com.finsight.mvp",
+    image: "assets/finsight-screenshot.webp",
+  },
+];
+
+const secondaryProjects = [
+  {
     title: "Recado",
-    subtitle: "Мессенджер для Анголы",
-    status: "Опубликован в App Store",
-    description: "Мобильный мессенджер на базе Matrix/Element для международного проекта.",
+    subtitle: "Мессенджер для международного проекта",
+    status: "Публиковался в App Store",
+    description: "Мобильный мессенджер на базе Matrix/Element. Участвовал в разработке мобильного продукта.",
     tags: ["iOS", "Matrix", "App Store"],
     url: "https://apps.apple.com/app/recado/id6759389840",
     image: "assets/recado-icon.webp",
     imageMode: "contain",
   },
   {
-    title: "One",
-    subtitle: "Мессенджер для Движения Первых",
-    status: "Mobile / Product",
-    description: "Мессенджер для коммуникации внутри сообщества.",
-    tags: ["Messaging", "Mobile", "Product"],
-    url: "http://web.onemessage.ru/",
-    image: "assets/one-icon.jfif",
+    title: "ScanFlow",
+    subtitle: "Платёжное Android-приложение",
+    status: "Опубликован в RuStore",
+    description: "Приложение для оплаты рублями в Таиланде и Индонезии. Участвовал в технической реализации мобильного продукта.",
+    tags: ["Android", "Kotlin", "REST API"],
+    url: "https://www.rustore.ru/catalog/app/com.scanflow.mobile",
+    image: "assets/scanflow-logo.svg",
     imageMode: "contain",
   },
   {
     title: "AI-помощник аналитика",
-    subtitle: "Проект для СБЕР",
+    subtitle: "Внутренний AI-инструмент",
     status: "AI / Automation",
-    description: "AI-инструмент для помощи в аналитических задачах.",
+    description:
+      "AI-инструмент для аналитических задач. Показывает, что AI применим не только в клиентских чат-ботах, но и во внутренних рабочих процессах компании.",
     tags: ["AI", "Analytics", "Automation"],
     url: "https://github.com/S0lerro/AI-Helper-analytics",
     image: "assets/github-icon.svg",
+    imageMode: "contain",
+  },
+  {
+    title: "One",
+    subtitle: "Мессенджер для внутренней коммуникации сообщества",
+    status: "Mobile / Product",
+    description: "Участвовал в разработке мобильного мессенджера.",
+    tags: ["Messaging", "Mobile", "Product"],
+    url: "http://web.onemessage.ru/",
+    image: "assets/one-icon.jfif",
     imageMode: "contain",
   },
 ];
@@ -87,6 +120,7 @@ const reviews = [
 ];
 
 const casesGrid = document.querySelector("#casesGrid");
+const secondaryCasesGrid = document.querySelector("#secondaryCasesGrid");
 const reviewsGrid = document.querySelector("#reviewsGrid");
 const linkModal = document.querySelector("#linkModal");
 const linkModalUrl = document.querySelector("#linkModalUrl");
@@ -109,13 +143,19 @@ function getCaseShot(project) {
     return `<img class="${imageClass}" src="${project.image}" alt="Скриншот проекта ${project.title}" loading="lazy" />`;
   }
 
-  return "Скриншот проекта";
+  return `<span class="case-shot__label">${project.coverLabel || project.subtitle}</span>`;
 }
 
-function renderProjects() {
-  casesGrid.innerHTML = projects
-    .map(
-      (project) => `
+function getCasePoints(project) {
+  if (!project.points) {
+    return "";
+  }
+
+  return `<ul class="case-points">${project.points.map((point) => `<li>${point}</li>`).join("")}</ul>`;
+}
+
+function renderCaseCard(project) {
+  return `
         <article class="case-card reveal ${project.url ? "is-clickable" : ""}" ${getCaseAttributes(project)}>
           <div class="case-shot">${getCaseShot(project)}</div>
           <div class="case-body">
@@ -123,14 +163,18 @@ function renderProjects() {
             <h3>${project.title}</h3>
             <strong class="case-subtitle">${project.subtitle}</strong>
             <p>${project.description}</p>
+            ${getCasePoints(project)}
             <div class="tags">
               ${project.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
             </div>
           </div>
         </article>
-      `,
-    )
-    .join("");
+      `;
+}
+
+function renderProjects() {
+  casesGrid.innerHTML = featuredProjects.map(renderCaseCard).join("");
+  secondaryCasesGrid.innerHTML = secondaryProjects.map(renderCaseCard).join("");
 }
 
 function openLinkModal(url) {
@@ -148,23 +192,25 @@ function closeLinkModal() {
 }
 
 function initProjectLinks() {
-  casesGrid.addEventListener("click", (event) => {
-    const card = event.target.closest("[data-project-url]");
+  [casesGrid, secondaryCasesGrid].forEach((grid) => {
+    grid.addEventListener("click", (event) => {
+      const card = event.target.closest("[data-project-url]");
 
-    if (card) {
+      if (card) {
+        openLinkModal(card.dataset.projectUrl);
+      }
+    });
+
+    grid.addEventListener("keydown", (event) => {
+      const card = event.target.closest("[data-project-url]");
+
+      if (!card || (event.key !== "Enter" && event.key !== " ")) {
+        return;
+      }
+
+      event.preventDefault();
       openLinkModal(card.dataset.projectUrl);
-    }
-  });
-
-  casesGrid.addEventListener("keydown", (event) => {
-    const card = event.target.closest("[data-project-url]");
-
-    if (!card || (event.key !== "Enter" && event.key !== " ")) {
-      return;
-    }
-
-    event.preventDefault();
-    openLinkModal(card.dataset.projectUrl);
+    });
   });
 
   document.querySelectorAll("[data-close-modal]").forEach((button) => {
