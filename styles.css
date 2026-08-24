@@ -614,6 +614,13 @@ h2.centered {
   font-style: italic;
 }
 
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
 .project-tags {
   display: flex;
   flex-wrap: wrap;
@@ -649,6 +656,19 @@ h2.centered {
   gap: 22px;
   padding: 26px;
   background: var(--dark);
+}
+
+.project-mini.is-order {
+  background: #141a22;
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.project-mini.is-order .project-mini__shot {
+  background: linear-gradient(140deg, #1d3247, #14202c);
+}
+
+.project-mini.is-order:hover {
+  background: #172029;
 }
 
 .project-mini.is-clickable {

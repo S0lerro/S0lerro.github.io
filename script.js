@@ -33,6 +33,8 @@ const featuredProjects = [
     tags: ["AI", "YClients", "YooKassa", "PostgreSQL"],
     url: "https://max.ru/id524706834883_bot",
     linkLabel: "Открыть бота",
+    videoUrl: "https://drive.google.com/file/d/11v9zoqVPU-Vchs89-pht0_gelKlmyLRT/view?usp=sharing",
+    videoLabel: "Смотреть видео работы бота",
     image: "assets/booking-bot-prichal.jfif",
   },
   {
@@ -270,9 +272,23 @@ function renderProject(project) {
   const points = project.points
     ? `<ul class="project-points">${project.points.map((point) => `<li>${point}</li>`).join("")}</ul>`
     : "";
-  const action = project.url
-    ? `<button class="button primary" type="button" data-project-url="${project.url}">${project.linkLabel || "Открыть проект"}</button>`
-    : "";
+  const buttons = [];
+
+  if (project.videoUrl) {
+    buttons.push(
+      `<button class="button primary" type="button" data-project-url="${project.videoUrl}">${project.videoLabel}</button>`,
+    );
+  }
+
+  if (project.url) {
+    const style = project.videoUrl ? "ghost" : "primary";
+
+    buttons.push(
+      `<button class="button ${style}" type="button" data-project-url="${project.url}">${project.linkLabel || "Открыть проект"}</button>`,
+    );
+  }
+
+  const action = buttons.length ? `<div class="project-actions">${buttons.join("")}</div>` : "";
 
   return `
         <article class="project reveal">
@@ -307,9 +323,21 @@ function renderMiniProject(project) {
       `;
 }
 
+const orderCard = `
+        <a class="project-mini is-order reveal" href="#contacts">
+          <div class="project-mini__shot"><span class="project-label">Ваш проект</span></div>
+          <div>
+            <span class="project-status">Свободен для новой задачи</span>
+            <h3>Здесь может быть ваш заказ</h3>
+            <p>Опишите задачу в двух предложениях — отвечу, что реально сделать в первой версии, сколько это займёт и сколько будет стоить.</p>
+            <span class="project-link">Обсудить задачу →</span>
+          </div>
+        </a>
+      `;
+
 function renderProjects() {
   casesGrid.innerHTML = featuredProjects.map(renderProject).join("");
-  secondaryCasesGrid.innerHTML = secondaryProjects.map(renderMiniProject).join("");
+  secondaryCasesGrid.innerHTML = secondaryProjects.map(renderMiniProject).join("") + orderCard;
 }
 
 function openLinkModal(url) {
