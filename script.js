@@ -179,8 +179,6 @@ const secondaryProjects = [
       "Система отслеживает новые проекты на бирже, разбирает требования заказчика и формирует релевантный отклик через AI. Пример автоматизации рутинной коммуникации от начала до конца.",
     tags: ["Python", "Parsing", "AI", "Automation"],
     coverLabel: "Парсинг · AI-отклики",
-    image: "assets/kwork-logo.png",
-    imageMode: "contain",
   },
 ];
 
