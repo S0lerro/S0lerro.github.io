@@ -14,6 +14,7 @@ const featuredProjects = [
     ],
     tags: ["AI", "YClients", "YooKassa", "PostgreSQL"],
     url: "https://max.ru/id524706834883_bot",
+    linkLabel: "Открыть бота",
     image: "assets/booking-bot-prichal.jfif",
   },
   {
@@ -45,6 +46,7 @@ const featuredProjects = [
     ],
     tags: ["React Native", "Expo", "AI", "RuStore"],
     url: "https://www.rustore.ru/catalog/app/com.finsight.mvp",
+    linkLabel: "Открыть в RuStore",
     image: "assets/finsight-screenshot.webp",
   },
 ];
@@ -57,6 +59,7 @@ const secondaryProjects = [
     description: "Мобильный мессенджер на базе Matrix/Element. Участвовал в разработке мобильного продукта.",
     tags: ["iOS", "Matrix", "App Store"],
     url: "https://apps.apple.com/app/recado/id6759389840",
+    linkLabel: "Открыть в App Store",
     image: "assets/recado-icon.webp",
     imageMode: "contain",
   },
@@ -67,6 +70,7 @@ const secondaryProjects = [
     description: "Приложение для оплаты рублями в Таиланде и Индонезии. Участвовал в технической реализации мобильного продукта.",
     tags: ["Android", "Kotlin", "REST API"],
     url: "https://www.rustore.ru/catalog/app/com.scanflow.mobile",
+    linkLabel: "Открыть в RuStore",
     image: "assets/scanflow-logo.svg",
     imageMode: "contain",
   },
@@ -78,8 +82,8 @@ const secondaryProjects = [
       "AI-инструмент для аналитических задач. Показывает, что AI применим не только в клиентских чат-ботах, но и во внутренних рабочих процессах компании.",
     tags: ["AI", "Analytics", "Automation"],
     url: "https://github.com/S0lerro/AI-Helper-analytics",
-    image: "assets/github-icon.svg",
-    imageMode: "contain",
+    linkLabel: "Открыть репозиторий",
+    image: "assets/ai-analytics-cover.svg",
   },
   {
     title: "One",
@@ -88,6 +92,7 @@ const secondaryProjects = [
     description: "Участвовал в разработке мобильного мессенджера.",
     tags: ["Messaging", "Mobile", "Product"],
     url: "http://web.onemessage.ru/",
+    linkLabel: "Открыть проект",
     image: "assets/one-icon.jfif",
     imageMode: "contain",
   },
@@ -167,6 +172,7 @@ function renderCaseCard(project) {
             <div class="tags">
               ${project.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
             </div>
+            ${project.url ? `<span class="case-link">${project.linkLabel || "Открыть проект"} →</span>` : ""}
           </div>
         </article>
       `;

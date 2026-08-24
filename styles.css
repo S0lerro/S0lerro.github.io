@@ -799,6 +799,14 @@ a {
   padding: 20px;
 }
 
+.case-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--accent-dark);
+  font-size: 14px;
+  font-weight: 700;
+}
+
 .case-points {
   margin: 14px 0 0;
   padding-left: 18px;
