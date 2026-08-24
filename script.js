@@ -137,11 +137,11 @@ const secondaryProjects = [
   },
   {
     title: "ScanFlow",
-    subtitle: "Платёжное Android-приложение",
+    subtitle: "Сканер QR-кодов для оплаты за границей",
     status: "Опубликован в RuStore",
     description:
-      "Приложение для оплаты рублями в Таиланде и Индонезии. Участвовал в технической реализации мобильного продукта.",
-    tags: ["Android", "Kotlin", "REST API"],
+      "Приложение для оплаты рублями в Таиланде и Индонезии: сканирование и загрузка QR-кодов, фильтр по городам, предупреждение, если код не тайский и не индонезийский. Опубликовано в RuStore под моим именем — прошло ручную проверку и антивирус магазина.",
+    tags: ["Android", "Kotlin", "QR", "RuStore"],
     url: "https://www.rustore.ru/catalog/app/com.scanflow.mobile",
     linkLabel: "Открыть в RuStore",
     image: "assets/scanflow-logo.svg",
