@@ -269,7 +269,6 @@ function renderProject(project) {
 
   return `
         <article class="project reveal">
-          <div class="project-media ${project.image ? "" : "is-plain"}">${getMedia(project)}</div>
           <div class="project-caption">
             <span class="project-status">${project.status}</span>
             <h3>${project.title}</h3>

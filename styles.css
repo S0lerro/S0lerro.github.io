@@ -423,7 +423,7 @@ h2.centered {
 
 .projects {
   display: grid;
-  gap: 96px;
+  gap: 48px;
 }
 
 .project {
@@ -470,9 +470,9 @@ h2.centered {
 }
 
 .project-caption {
-  width: min(760px, 88%);
-  margin-top: -78px;
-  padding: 40px 44px;
+  width: min(880px, 100%);
+  margin-top: 0;
+  padding: 46px 52px;
   background: #fff;
   color: var(--ink);
   text-align: center;
@@ -1105,8 +1105,7 @@ h2.centered {
   }
 
   .project-caption {
-    width: 94%;
-    margin-top: -46px;
+    width: 100%;
     padding: 28px 22px;
   }
 
