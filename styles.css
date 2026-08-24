@@ -453,6 +453,11 @@ h2.centered {
   background: #fff;
 }
 
+.project-media.is-plain {
+  height: 230px;
+  background: linear-gradient(140deg, #1b2a38, #101b25);
+}
+
 .project-label {
   display: grid;
   height: 100%;
@@ -525,6 +530,90 @@ h2.centered {
   content: "—";
 }
 
+.project-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: 0 auto 26px;
+  max-width: 620px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.project-metrics div {
+  padding: 18px 10px;
+  border-right: 1px solid var(--line);
+}
+
+.project-metrics div:last-child {
+  border-right: 0;
+}
+
+.project-metrics strong {
+  display: block;
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.project-metrics span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.chat-demo {
+  max-width: 620px;
+  margin: 0 auto 26px;
+  padding: 24px;
+  background: var(--soft);
+  text-align: left;
+}
+
+.chat-title {
+  margin: 0 0 16px !important;
+  color: var(--ink) !important;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.chat-thread {
+  display: grid;
+  gap: 10px;
+}
+
+.chat-bubble {
+  max-width: 84%;
+  margin: 0 !important;
+  padding: 12px 16px;
+  color: var(--ink) !important;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.chat-bubble.is-bot {
+  justify-self: start;
+  border-left: 2px solid var(--accent);
+  background: #fff;
+}
+
+.chat-bubble.is-user {
+  justify-self: end;
+  background: var(--accent);
+  color: #fff !important;
+}
+
+.chat-note {
+  margin: 16px 0 0 !important;
+  color: var(--muted) !important;
+  font-size: 12px;
+  font-style: italic;
+}
+
 .project-tags {
   display: flex;
   flex-wrap: wrap;
@@ -594,7 +683,12 @@ h2.centered {
   background: #fff;
 }
 
-.project-mini__shot .project-label {
+.project-mini__shot .project-media.is-plain {
+  height: 230px;
+  background: linear-gradient(140deg, #1b2a38, #101b25);
+}
+
+.project-label {
   padding: 0 14px;
   font-size: 15px;
   line-height: 1.35;

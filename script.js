@@ -5,6 +5,11 @@ const featuredProjects = [
     status: "Работает у клиента",
     description:
       "Раньше весь путь гостя проходил через переписку с администратором: свободные даты, количество гостей, подбор варианта, оплата. Теперь гость пишет свободным текстом, а бот подбирает вариант, оформляет бронь и принимает оплату.",
+    metrics: [
+      { value: "200+", label: "оформленных броней" },
+      { value: "300+", label: "пользователей" },
+      { value: "30", label: "постоянных гостей" },
+    ],
     points: [
       "AI-диалог вместо кнопочных сценариев",
       "Интеграция с YClients — актуальная доступность в реальном времени",
@@ -12,6 +17,19 @@ const featuredProjects = [
       "База данных броней, изменение и отмена гостем",
       "Обработка дополнительных услуг",
     ],
+    chat: {
+      title: "Как проходит бронирование",
+      note: "Реальный сценарий из работающего бота. Имя гостя и ссылка на оплату скрыты.",
+      messages: [
+        { from: "bot", text: "Здравствуйте! Я Любовь, администратор базы отдыха «Причал» на пляже Максима Горького. Какой объект вас интересует: беседка, баня или гостевой дом?" },
+        { from: "user", text: "Баня с бассейном" },
+        { from: "bot", text: "Баня с бассейном свободна на 4 сентября. На сколько часов хотите её забронировать?" },
+        { from: "user", text: "На 6 часов, с 17:00" },
+        { from: "bot", text: "Поняла, на 6 часов с 17:00. Это будет 15 900 ₽. Сколько гостей планируете?" },
+        { from: "user", text: "13" },
+        { from: "bot", text: "Заявка на баню с бассейном 4 сентября с 17:00 на 6 часов для 13 гостей готова. Стоимость 15 900 ₽, предоплата 50% — 7 950 ₽. Отправляю ссылку для оплаты. Возврат возможен при отмене за 7 дней до даты бронирования." },
+      ],
+    },
     tags: ["AI", "YClients", "YooKassa", "PostgreSQL"],
     url: "https://max.ru/id524706834883_bot",
     linkLabel: "Открыть бота",
@@ -23,6 +41,11 @@ const featuredProjects = [
     status: "Работает у клиента",
     description:
       "Посетители задавали в сообщениях одни и те же вопросы: какие есть форматы, что входит в пакеты, что подойдёт для компании из шести человек. Сотрудник тратил на это рабочее время, часть обращений терялась.",
+    metrics: [
+      { value: "100+", label: "обращений обработано" },
+      { value: "20", label: "гостей вернулись повторно" },
+      { value: "AmoCRM", label: "заявки сразу в воронке" },
+    ],
     points: [
       "AI-консультация в свободном диалоге, а не по кнопкам",
       "Подбор формата под запрос гостя",
@@ -34,6 +57,16 @@ const featuredProjects = [
     coverLabel: "AI-бот · Консультация · AmoCRM",
     url: "https://vk.ru/anotherworld.serov",
     linkLabel: "Открыть бота",
+    chat: {
+      title: "Как бот отвечает на вопрос о ценах",
+      note: "Реальный диалог из работающего бота.",
+      messages: [
+        { from: "bot", text: "Здравствуйте! Я Анна, онлайн-менеджер VR-арены «Другие миры» в Серове. Расскажу об играх, ценах, пакетах для мероприятий или помогу подобрать формат посещения. Что вас интересует?" },
+        { from: "user", text: "цены" },
+        { from: "bot", text: "Часовой сеанс стоит 700 рублей с человека по будням и 900 рублей в выходные.<br /><br />Для мероприятий есть пакеты:<br />— Lite (2 часа, до 6 игроков): 7000 / 9000 рублей<br />— Lite+ (3 часа, до 6 игроков): 9000 / 12000 рублей<br />— Standart (2, 3 и 4 часа, до 12 игроков): от 11000 до 22000 рублей<br />— VIP (3 часа, до 12 игроков, до 24 посетителей): 15000 / 18000 рублей<br /><br />Цены пакетов указаны за будни / выходные. Дополнительные шлемы и отдельные услуги оплачиваются отдельно — уточню, если нужно." },
+        { from: "user", text: "а если 4 человека" },
+      ],
+    },
   },
   {
     title: "FinSight",
@@ -205,6 +238,34 @@ function getMedia(project, containerClass) {
   return `<img class="${imageClass}" src="${project.image}" alt="Проект ${project.title}" loading="lazy" />`;
 }
 
+function renderMetrics(project) {
+  if (!project.metrics) {
+    return "";
+  }
+
+  return `<div class="project-metrics">${project.metrics
+    .map((metric) => `<div><strong>${metric.value}</strong><span>${metric.label}</span></div>`)
+    .join("")}</div>`;
+}
+
+function renderChat(project) {
+  if (!project.chat) {
+    return "";
+  }
+
+  return `
+        <div class="chat-demo">
+          <p class="chat-title">${project.chat.title}</p>
+          <div class="chat-thread">
+            ${project.chat.messages
+              .map((message) => `<p class="chat-bubble is-${message.from}">${message.text}</p>`)
+              .join("")}
+          </div>
+          <p class="chat-note">${project.chat.note}</p>
+        </div>
+      `;
+}
+
 function renderProject(project) {
   const points = project.points
     ? `<ul class="project-points">${project.points.map((point) => `<li>${point}</li>`).join("")}</ul>`
@@ -215,13 +276,15 @@ function renderProject(project) {
 
   return `
         <article class="project reveal">
-          <div class="project-media">${getMedia(project)}</div>
+          <div class="project-media ${project.image ? "" : "is-plain"}">${getMedia(project)}</div>
           <div class="project-caption">
             <span class="project-status">${project.status}</span>
             <h3>${project.title}</h3>
             <span class="project-subtitle">${project.subtitle}</span>
             <p>${project.description}</p>
+            ${renderMetrics(project)}
             ${points}
+            ${renderChat(project)}
             <div class="project-tags">
               ${project.tags.map((tag) => `<span>${tag}</span>`).join("")}
             </div>
