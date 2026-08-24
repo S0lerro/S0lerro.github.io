@@ -614,6 +614,26 @@ h2.centered {
   font-style: italic;
 }
 
+.case-video {
+  max-width: 620px;
+  margin: 0 auto 26px;
+}
+
+.case-video video {
+  display: block;
+  width: 100%;
+  max-height: 520px;
+  background: #0e1013;
+}
+
+.case-video figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .project-actions {
   display: flex;
   flex-wrap: wrap;

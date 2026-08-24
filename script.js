@@ -33,6 +33,7 @@ const featuredProjects = [
     tags: ["AI", "YClients", "YooKassa", "PostgreSQL"],
     url: "https://max.ru/id524706834883_bot",
     linkLabel: "Открыть бота",
+    videoFile: "assets/video/booking-bot.mp4",
     videoUrl: "https://drive.google.com/file/d/11v9zoqVPU-Vchs89-pht0_gelKlmyLRT/view?usp=sharing",
     videoLabel: "Смотреть видео работы бота",
     image: "assets/booking-bot-prichal.jfif",
@@ -268,23 +269,44 @@ function renderChat(project) {
       `;
 }
 
+function renderVideo(project) {
+  if (!project.videoFile) {
+    return "";
+  }
+
+  return `
+        <figure class="case-video">
+          <video controls preload="metadata" playsinline>
+            <source src="${project.videoFile}" type="video/mp4" />
+          </video>
+          <figcaption>${project.videoLabel}</figcaption>
+        </figure>
+      `;
+}
+
 function renderProject(project) {
   const points = project.points
     ? `<ul class="project-points">${project.points.map((point) => `<li>${point}</li>`).join("")}</ul>`
     : "";
   const buttons = [];
 
-  if (project.videoUrl) {
+  if (project.videoUrl && !project.videoFile) {
     buttons.push(
       `<button class="button primary" type="button" data-project-url="${project.videoUrl}">${project.videoLabel}</button>`,
     );
   }
 
   if (project.url) {
-    const style = project.videoUrl ? "ghost" : "primary";
+    const style = project.videoUrl && !project.videoFile ? "ghost" : "primary";
 
     buttons.push(
       `<button class="button ${style}" type="button" data-project-url="${project.url}">${project.linkLabel || "Открыть проект"}</button>`,
+    );
+  }
+
+  if (project.videoFile && project.videoUrl) {
+    buttons.unshift(
+      `<button class="button primary" type="button" hidden data-fallback-url data-project-url="${project.videoUrl}">${project.videoLabel}</button>`,
     );
   }
 
@@ -300,6 +322,7 @@ function renderProject(project) {
             ${renderMetrics(project)}
             ${points}
             ${renderChat(project)}
+            ${renderVideo(project)}
             <div class="project-tags">
               ${project.tags.map((tag) => `<span>${tag}</span>`).join("")}
             </div>
@@ -334,6 +357,22 @@ const orderCard = `
           </div>
         </a>
       `;
+
+function initVideoFallback() {
+  document.querySelectorAll(".case-video source").forEach((source) => {
+    source.addEventListener("error", () => {
+      const figure = source.closest(".case-video");
+      const card = figure.closest(".project");
+      const link = card.querySelector("[data-fallback-url]");
+
+      figure.remove();
+
+      if (link) {
+        link.hidden = false;
+      }
+    });
+  });
+}
 
 function renderProjects() {
   casesGrid.innerHTML = featuredProjects.map(renderProject).join("");
@@ -440,4 +479,5 @@ function initRevealAnimation() {
 renderProjects();
 renderReviews();
 initProjectLinks();
+initVideoFallback();
 initRevealAnimation();
